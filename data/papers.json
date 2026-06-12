@@ -1,12 +1,14 @@
 [
   {
+    "id": "4b59d468-4138-426d-b701-8de4c8377938",
     "date": "2026-06-12",
+    "category": "WAM",
     "title": "Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination",
     "authors": "",
     "year": "2026",
     "link": "https://doi.org/10.48550/arXiv.2606.10040",
     "topic": "WAM/轻量化",
-    "problem": "",
+    "problem": "主要是解决WAM模型推理效率低的问题",
     "method": "",
     "dataset": "RoboTwin 2.0仿真环境，真机",
     "metric": "",
@@ -14,8 +16,6 @@
     "limitation": "对于穿线等需要像素级超高精度的微操作任务，仍需依靠高分辨率视觉信息辅助。",
     "takeaway": "世界模型蕴含的世界先验知识是普通VLM模型所不具备的，因此对于具身智能来说，最好还是借用世界模型的能力来完成相关任务。",
     "tags": "",
-    "status": "精读",
-    "id": "4b59d468-4138-426d-b701-8de4c8377938",
-    "category": "WAM"
+    "status": "精读"
   }
 ]
