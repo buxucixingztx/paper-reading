@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>录入论文</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header>
+    <h1>录入论文</h1>
+    <p>提交后会通过 GitHub API 更新 <code>data/papers.json</code>，展示页会读取同一个文件。</p>
+  </header>
+
+  <section class="card">
+    <h2>GitHub 设置</h2>
+    <p class="note">
+      Token 只保存在当前浏览器 localStorage 中，不要写进仓库。建议使用 Fine-grained token，只授权当前仓库的 Contents: Read and write。
+    </p>
+    <div class="grid">
+      <div>
+        <label for="owner">GitHub 用户名 / 组织名</label>
+        <input id="owner" placeholder="例如 yourname" />
+      </div>
+      <div>
+        <label for="repo">仓库名</label>
+        <input id="repo" placeholder="例如 paper-reading" />
+      </div>
+      <div>
+        <label for="branch">分支</label>
+        <input id="branch" value="main" />
+      </div>
+    </div>
+    <div class="form-section">
+      <label for="token">GitHub Token</label>
+      <input id="token" type="password" placeholder="github_pat_..." />
+    </div>
+    <div class="form-section toolbar">
+      <button id="saveConfigBtn">保存设置到本机浏览器</button>
+      <button class="secondary" id="loadConfigBtn">读取已保存设置</button>
+      <button class="danger" id="clearConfigBtn">清除本机设置</button>
+      <a href="./index.html">返回展示页</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>论文信息</h2>
+
+    <div class="grid">
+      <div>
+        <label for="date">阅读日期</label>
+        <input id="date" type="date" />
+      </div>
+      <div>
+        <label for="title">论文标题 *</label>
+        <input id="title" placeholder="论文标题" />
+      </div>
+      <div>
+        <label for="authors">作者</label>
+        <input id="authors" placeholder="Author A, Author B" />
+      </div>
+      <div>
+        <label for="year">年份</label>
+        <input id="year" placeholder="2026" />
+      </div>
+      <div>
+        <label for="link">链接 / DOI / arXiv</label>
+        <input id="link" placeholder="https://arxiv.org/abs/..." />
+      </div>
+      <div>
+        <label for="topic">领域 / 任务</label>
+        <input id="topic" placeholder="RAG / Agent / CV / RL..." />
+      </div>
+      <div>
+        <label for="method">方法 / 模型</label>
+        <input id="method" placeholder="核心方法、模型、框架" />
+      </div>
+      <div>
+        <label for="dataset">数据集 / Benchmark</label>
+        <input id="dataset" placeholder="MMLU, GSM8K, HumanEval..." />
+      </div>
+      <div>
+        <label for="metric">指标 / 结果</label>
+        <input id="metric" placeholder="Accuracy, F1, pass@k..." />
+      </div>
+      <div>
+        <label for="tags">标签</label>
+        <input id="tags" placeholder="多个标签用英文逗号分隔" />
+      </div>
+      <div>
+        <label for="status">阅读状态</label>
+        <select id="status">
+          <option>待读</option>
+          <option>粗读</option>
+          <option selected>精读</option>
+          <option>已复现</option>
+          <option>已引用</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label for="problem">核心问题</label>
+      <textarea id="problem" placeholder="这篇论文解决什么问题？"></textarea>
+    </div>
+
+    <div class="grid-2 form-section">
+      <div>
+        <label for="contribution">主要贡献</label>
+        <textarea id="contribution" placeholder="论文的新意、贡献、核心结论"></textarea>
+      </div>
+      <div>
+        <label for="limitation">局限性</label>
+        <textarea id="limitation" placeholder="实验、方法、假设上的局限"></textarea>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <label for="takeaway">对我的启发 / 可借鉴点</label>
+      <textarea id="takeaway" placeholder="这篇论文对你的研究、项目或写作有什么用？"></textarea>
+    </div>
+
+    <div class="form-section toolbar">
+      <button id="submitBtn">提交到 GitHub</button>
+      <button class="secondary" id="previewBtn">预览 JSON</button>
+      <button class="danger" id="clearFormBtn">清空表单</button>
+    </div>
+  </section>
+
+  <div id="adminStatus" class="status"></div>
+
+  <section class="card">
+    <h2>预览</h2>
+    <pre id="preview" class="note"></pre>
+  </section>
+
+  <script src="./assets/admin.js"></script>
+</body>
+</html>

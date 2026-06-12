@@ -1,2 +1,34 @@
-# paper-reading
-论文阅读记录
+# 论文阅读记录
+
+这是一个适合部署到 GitHub Pages 的静态论文阅读记录项目。
+
+## 页面
+
+- `index.html`：展示页，公开查看论文阅读记录。
+- `admin.html`：录入页，通过 GitHub REST API 把新论文提交到 `data/papers.json`。
+- `data/papers.json`：论文数据源。
+- `assets/app.js`：展示页逻辑。
+- `assets/admin.js`：录入页逻辑。
+- `assets/style.css`：样式。
+
+## 使用步骤
+
+1. 在 GitHub 新建仓库，例如 `paper-reading`。
+2. 上传本项目所有文件。
+3. 打开仓库 `Settings -> Pages`。
+4. Source 选择 `Deploy from a branch`。
+5. Branch 选择 `main`，Folder 选择 `/root`，保存。
+6. 创建 Fine-grained personal access token：
+   - 只选择这个仓库。
+   - Repository permissions 中把 `Contents` 设置为 `Read and write`。
+   - 不要把 token 写入仓库。
+7. 打开 `https://你的用户名.github.io/paper-reading/admin.html`。
+8. 填入用户名、仓库名、分支和 token，保存到浏览器。
+9. 每次阅读完论文后在 `admin.html` 提交。
+10. 到 `index.html` 查看结果。
+
+## 注意
+
+GitHub Pages 是静态站点，无法自己保存数据；本项目通过 GitHub API 提交 JSON 文件来实现“输入页写入、展示页读取”。
+
+Token 只保存在本机浏览器 localStorage 中。不要在公共电脑上使用，不要把 token 粘贴到代码里。

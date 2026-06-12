@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>论文阅读记录</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header>
+    <h1>论文阅读记录</h1>
+    <p>按日期整理每日阅读论文，便于横向对比方法、数据集、贡献和局限。</p>
+  </header>
+
+  <section class="summary-cards">
+    <div class="summary-card"><strong id="totalCount">0</strong><span>总论文数</span></div>
+    <div class="summary-card"><strong id="monthCount">0</strong><span>本月阅读</span></div>
+    <div class="summary-card"><strong id="topicCount">0</strong><span>领域数量</span></div>
+    <div class="summary-card"><strong id="tagCount">0</strong><span>标签数量</span></div>
+  </section>
+
+  <section class="card toolbar">
+    <input id="searchInput" placeholder="搜索标题、作者、领域、方法、贡献、标签..." />
+    <select id="statusFilter">
+      <option value="">全部状态</option>
+      <option>待读</option>
+      <option>粗读</option>
+      <option>精读</option>
+      <option>已复现</option>
+      <option>已引用</option>
+    </select>
+    <button class="secondary" id="exportBtn">导出当前筛选 CSV</button>
+    <a href="./admin.html">录入新论文</a>
+  </section>
+
+  <div id="status" class="status">正在读取数据...</div>
+
+  <main class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>论文</th>
+          <th>领域 / 任务</th>
+          <th>问题</th>
+          <th>方法</th>
+          <th>数据集 / 指标</th>
+          <th>贡献</th>
+          <th>局限</th>
+          <th>启发</th>
+          <th>标签 / 状态</th>
+        </tr>
+      </thead>
+      <tbody id="paperTable"></tbody>
+    </table>
+  </main>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
