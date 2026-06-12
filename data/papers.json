@@ -1,6 +1,23 @@
 [
   {
     "date": "2026-06-12",
+    "title": "Efficient-WAM: A 1B-Parameter World-Action Model with Low-Cost Future Imagination",
+    "authors": "",
+    "year": "2026",
+    "link": "https://doi.org/10.48550/arXiv.2606.10040",
+    "topic": "WAM/轻量化",
+    "problem": "",
+    "method": "",
+    "dataset": "RoboTwin 2.0仿真环境，真机",
+    "metric": "",
+    "contribution": "提出了Efficient-WAM模型，基于WAN-2.2-5B模型，先进行蒸馏，得到1B的学生模型，再接入Action专家训练动作生成(冻结Video分支)，最后进行端到端联合训练。 本文还进行了两种效率提升的操作，一种是降低未来帧的分辨率，作为粗略的动态参考；另一种是减少视频分支扩散步数（10->2）。 最终在RTX4090显卡实现了98ms的推理延迟。",
+    "limitation": "对于穿线等需要像素级超高精度的微操作任务，仍需依靠高分辨率视觉信息辅助。",
+    "takeaway": "世界模型蕴含的世界先验知识是普通VLM模型所不具备的，因此对于具身智能来说，最好还是借用世界模型的能力来完成相关任务。",
+    "tags": "",
+    "status": "精读"
+  },
+  {
+    "date": "2026-06-12",
     "title": "示例论文：你的第一篇阅读记录",
     "authors": "Author A, Author B",
     "year": "2026",
