@@ -1,5 +1,24 @@
 [
   {
+    "id": "399d11d1-d31f-4021-82f2-5a2a16853b2b",
+    "date": "2026-06-14",
+    "category": "VLN",
+    "title": "WorldVLN: Autoregressive World Action Model for Aerial Vision-Language Navigation",
+    "authors": "",
+    "year": "",
+    "link": "https://doi.org/10.48550/arXiv.2605.15964",
+    "topic": "VLN/WAM",
+    "problem": "传统VLA/VLN模型无法预测自身行动对环境变化的影响，而导航行为本质上具备预判特性，因此引入世界模型来捕捉动作对环境变化的因果关系。",
+    "method": "基于视频自回归模型的VLN模型",
+    "dataset": "",
+    "metric": "",
+    "contribution": "首次提出了面向航拍视觉语言导航的自回归世界动作模型，通过在时序维度预测环境隐表征，直接解析底层导航动作。另外提出了专门视频自回归世界动作模型的动作感知GRPO方法。",
+    "limitation": "",
+    "takeaway": "具身智能模型不能仅依靠VLM来直接预测action，而需要借助世界模型的能力，以增强感知动作对环境状态影响的能力。其提出的GRPO方法是一",
+    "tags": "",
+    "status": "精读"
+  },
+  {
     "id": "4b3354b1-64d5-4365-90a6-f0ad4db40c20",
     "date": "2026-06-14",
     "category": "VLN",
