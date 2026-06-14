@@ -1,5 +1,24 @@
 [
   {
+    "id": "4b3354b1-64d5-4365-90a6-f0ad4db40c20",
+    "date": "2026-06-14",
+    "category": "VLN",
+    "title": "JANUSVLN: DECOUPLING SEMANTICS AND SPATIAL- ITY WITH DUAL IMPLICIT MEMORY FOR VISION- LANGUAGE NAVIGATION",
+    "authors": "",
+    "year": "",
+    "link": "https://doi.org/10.48550/arXiv.2509.22548",
+    "topic": "VLN",
+    "problem": "针对视觉语言导航（VLN）任务提出全新框架JanusVLN，核心创新为双隐式记忆机制，解耦视觉语义与空间几何信息，仅依靠单目 RGB 输入实现当前最优性能（SOTA），推动 VLN 从 2D 语义主导转向 3D 空间 - 语义协同范式。",
+    "method": "",
+    "dataset": "R2R-CE, RxR-CE，HM3D-OVON, 四足机器人真机测试",
+    "metric": "",
+    "contribution": "",
+    "limitation": "",
+    "takeaway": "",
+    "tags": "",
+    "status": "精读"
+  },
+  {
     "id": "4b59d468-4138-426d-b701-8de4c8377938",
     "date": "2026-06-12",
     "category": "WAM",
