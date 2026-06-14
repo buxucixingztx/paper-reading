@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>生成 IEEE 格式综述</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header>
+    <h1>生成 IEEE 格式综述草稿</h1>
+    <p>根据 <code>data/papers.json</code> 中的论文阅读记录，自动生成 IEEEtran LaTeX、Markdown 或用于大模型润色的 Prompt。</p>
+  </header>
+
+  <section class="card">
+    <h2>综述基本信息</h2>
+    <div class="grid">
+      <div>
+        <label for="reviewTitle">论文标题</label>
+        <input id="reviewTitle" value="A Survey of Vision-Language-Action, Vision-Language Navigation, and World Models" />
+      </div>
+      <div>
+        <label for="reviewAuthors">作者</label>
+        <input id="reviewAuthors" placeholder="例如 Your Name" />
+      </div>
+      <div>
+        <label for="reviewKeywords">关键词</label>
+        <input id="reviewKeywords" value="Vision-Language-Action, Vision-Language Navigation, World Models, World-Action Models, Embodied AI" />
+      </div>
+    </div>
+    <p class="note">这个页面会生成可编辑的综述草稿，不会替你自动判断论文贡献是否真实完整。正式写作前仍需要你逐篇核对论文原文、补充引用信息并润色语言。</p>
+  </section>
+
+  <section class="card">
+    <h2>选择用于生成综述的论文</h2>
+    <div class="toolbar">
+      <input id="searchInput" placeholder="搜索标题、作者、类别、领域、方法、贡献、标签..." />
+      <select id="categoryFilter"><option value="">全部类别</option></select>
+      <select id="statusFilter">
+        <option value="">全部状态</option>
+        <option>待读</option>
+        <option>粗读</option>
+        <option>精读</option>
+        <option>已复现</option>
+        <option>已引用</option>
+      </select>
+      <button class="secondary" id="reloadBtn">重新读取数据</button>
+    </div>
+  </section>
+
+  <div id="reviewStatus" class="status">正在读取论文数据...</div>
+
+  <section class="summary-cards">
+    <div class="summary-card"><strong id="selectedCount">0</strong><span>参与生成论文数</span></div>
+    <div class="summary-card"><strong id="selectedCategoryCount">0</strong><span>参与类别数</span></div>
+    <div class="summary-card"><strong id="selectedReferenceCount">0</strong><span>参考文献条目数</span></div>
+    <div class="summary-card"><strong id="selectedSectionHint">0</strong><span>草稿结构段落数</span></div>
+  </section>
+
+  <section class="card">
+    <h2>生成设置</h2>
+    <div class="grid">
+      <div>
+        <label for="outputFormat">输出格式</label>
+        <select id="outputFormat">
+          <option value="latex">IEEEtran LaTeX</option>
+          <option value="markdown">Markdown 综述草稿</option>
+          <option value="prompt">用于 ChatGPT/LLM 润色的 Prompt</option>
+        </select>
+      </div>
+      <div>
+        <label for="language">语言</label>
+        <select id="language">
+          <option value="en">英文</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+      <div>
+        <label for="maxPapers">最多使用论文数</label>
+        <input id="maxPapers" type="number" min="1" value="80" />
+      </div>
+    </div>
+    <div class="form-section toolbar">
+      <button id="generateBtn">生成综述草稿</button>
+      <button class="secondary" id="copyBtn">复制结果</button>
+      <button class="secondary" id="downloadBtn">下载结果</button>
+      <a href="./index.html">返回展示页</a>
+      <a href="./admin.html">管理论文</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>结果预览</h2>
+    <textarea id="reviewOutput" class="large-output" placeholder="点击“生成综述草稿”后，这里会出现 LaTeX / Markdown / Prompt。"></textarea>
+  </section>
+
+  <script src="./assets/review.js"></script>
+</body>
+</html>
